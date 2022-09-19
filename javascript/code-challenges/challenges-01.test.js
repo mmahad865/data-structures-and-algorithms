@@ -31,7 +31,7 @@ const addExclamation = (arr) => {
   // Solution code here...
   const Newexclamation = [];
   arr.forEach(String => {
-    Newexclamation.push(String!);
+    Newexclamation.push(`${String}!`);
   });
   return Newexclamation;
 };
@@ -47,8 +47,8 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 const allUpperCase = (arr) => {
   // Solution code here...
   const uppercase = [];
-  arr.forEach((Array, i) => {;
-  uppercase[i] = arr.toUpperCase();
+  arr.forEach((Array, i) => {
+  uppercase[i] = Array.toUpperCase();
   });
   return uppercase;
 };
@@ -75,8 +75,13 @@ const speaker = (words, callback) => {
   // word.forEach((word, i) => {
 
   // }
-  return callback(words);
-
+  // return callback(words);
+  const speak = [];
+  words.forEach(word => {
+    const callbackspeak = callback(word);
+    speak.push(callbackspeak);
+  });
+  return speak;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,13 +102,13 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
-  arr.push(value);
+  value.push(arr);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-  for(let i=0; i< arr; i ++){
-    callback(num, times);
+  for(let i=0; i< times; i ++){
+    callback(num, arr);
   }
   return arr;
 };
