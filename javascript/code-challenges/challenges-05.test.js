@@ -46,6 +46,12 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
+  const initialTotalPrice = 0;
+  function priceReducer(totalPrice, product) {
+    console.log({ totalPrice, product });
+    return totalPrice + product.purchasePrice;
+  }
+  return arr.reduce(priceReducer, initialTotalPrice);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,6 +64,11 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+  const initialCount = 0;
+  function countReducer(count) {
+    return count + 1;
+  }
+  return arr.reduce(countReducer, initialCount);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,6 +129,12 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  const initialNames = [];
+  function namesReducer(names, character) {
+    names.push(character.name);
+    return names;
+  }
+  return arr.reduce(namesReducer, initialNames);
 };
 
 /* ------------------------------------------------------------------------------------------------
